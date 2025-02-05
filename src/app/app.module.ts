@@ -28,7 +28,8 @@ import { PadresDeFamiliaComponent } from './padres-de-familia/padres-de-familia.
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    PadresDeFamiliaComponent
+    PadresDeFamiliaComponent,
+    AdminLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
