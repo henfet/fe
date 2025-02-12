@@ -20,8 +20,8 @@ export class PadresDeFamiliaComponent implements OnInit {
     this.listaPadres = {
       headerRow: [ 'DNI', 'Nombre', 'Domicilio', 'Celular', 'Email', 'Fecha de nacimiento'],
       dataRows: [
-        ['0506199010512', 'Leonardo Alberto Davila Funez', 'La concordia, frente a la iglesia Luz del Mundo', '33098590', '', '23/04/1990'],
-        ['0512198600127', 'Alma Guevara Paz', 'Buenos Aires, 15 avenida 9 calle', '98872037', 'almague1986@gmail.com', '01/01/1986'],
+        // ['0506199010512', 'Leonardo Alberto Davila Funez', 'La concordia, frente a la iglesia Luz del Mundo', '33098590', '', '23/04/1990'],
+        // ['0512198600127', 'Alma Guevara Paz', 'Buenos Aires, 15 avenida 9 calle', '98872037', 'almague1986@gmail.com', '01/01/1986'],
 
       ]
     }
@@ -32,7 +32,9 @@ export class PadresDeFamiliaComponent implements OnInit {
     {
       this.padresService.getAllPadres().subscribe({
         next: (response) => {
-          console.log(response);
+          this.listaPadres.dataRows = response.Data;
+          console.log(`listaPadres.dataRows`);
+          console.table(this.listaPadres.dataRows)
         }
       })
     }
